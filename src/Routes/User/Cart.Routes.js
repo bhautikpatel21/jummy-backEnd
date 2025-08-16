@@ -1,6 +1,5 @@
 const express = require('express');
 const cartRotes = express.Router();
-const { userVerifyToken } = require('../../Helpers/UserVerifyToken');
 
 const {
     addToCart,
@@ -10,14 +9,14 @@ const {
     deleteCart
 } = require('../../Controller/User/Cart.controller');
 
-cartRotes.post('/add-Cart', userVerifyToken, addToCart);
+cartRotes.post('/add-Cart', addToCart);
 
-cartRotes.get('/get-All-Cart', userVerifyToken, getAllCarts);
+cartRotes.get('/get-All-Cart', getAllCarts);
 
-cartRotes.get('/get-Cart', userVerifyToken, getCart);
+cartRotes.get('/get-Cart', getCart);
 
-cartRotes.put('/update-cart', userVerifyToken, updateCart);
+cartRotes.put('/update-cart', updateCart);
 
-cartRotes.delete('/delete-Cart', userVerifyToken, deleteCart);
+cartRotes.delete('/delete-Cart', deleteCart);
 
 module.exports = cartRotes;
