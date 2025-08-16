@@ -1,8 +1,6 @@
 const express = require('express');
 const userRoutes = express.Router();
 
-const {userVerifyToken} = require('../../Helpers/UserVerifyToken');
-
 const {
     registerUser,
     loginUser,
@@ -19,16 +17,16 @@ userRoutes.post('/register',registerUser);
 
 userRoutes.post('/login-user',loginUser);
 
-userRoutes.get('/get-user',userVerifyToken,getUser);
+userRoutes.get('/get-user',getUser);
 
-userRoutes.get('/get-all-user',userVerifyToken,getAllUser);
+userRoutes.get('/get-all-user',getAllUser);
 
-userRoutes.put('/update-user',userVerifyToken,updateUser);
+userRoutes.put('/update-user',updateUser);
 
-userRoutes.put('/update-password',userVerifyToken,updatePassword);
+userRoutes.put('/update-password',updatePassword);
 
-userRoutes.post('/delete-user',userVerifyToken,deleteUser);
+userRoutes.post('/delete-user',deleteUser);
 
-userRoutes.post('/logout-user',userVerifyToken,logOut);
+userRoutes.post('/logout-user',logOut);
 
 module.exports = userRoutes;
